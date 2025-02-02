@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RaktDaan | Helping People</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>RaktDaan - A Blood Bank Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="stock.html">Stock Availability</a></li>
+                <li><a href="donate.html">Donate Blood</a></li>
+                <li><a href="request.html">Request Blood</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="stock">
+        <h2>Check Blood Stock Availability</h2>
+        <label for="state">Select State:</label>
+        <select id="state" onchange="updateCities()">
+            <option value="">--Select State--</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+        </select>
+        
+        <label for="city">Select City:</label>
+        <select id="city" disabled>
+            <option value="">--Select City--</option>
+        </select>
+        
+        <label for="blood-group">Select Blood Group:</label>
+        <select id="blood-group">
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+        </select>
+        <button onclick="fetchStock()">Check Availability</button>
+        
+        <table id="stock-table">
+            <thead>
+                <tr>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>Blood Type</th>
+                    <th>Quantity Available</th>
+                    <th>Last Updated</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
